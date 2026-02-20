@@ -1,0 +1,254 @@
+<!-- KZ's Portfolio with help from Fudgeu (thx dude) -->                                                                                                                   
+<!DOCTYPE html>
+<html lang='en' class=''>
+    <head>
+
+        <meta charset='UTF-8'>
+        <meta name="description" content="KZ's artist portfolio">
+        <meta name="keywords" content="artist, portfolio, 3D">
+        <meta name="author" content="Kazandra Crisostomo">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="styles.css" rel="stylesheet" type="text/css" media="all">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&icon_names=mail,send"/>
+        <title>Kazandra's Portfolio</title>
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+        <script src="videoModelScrubbing.js"></script>
+
+    </head>
+
+    <body>
+        <img src="site under construction.png" style="position:fixed; height: 20vh; bottom: 20px; right: 40px; z-index: 1;">
+        <div class="everything">
+            <div class="sidebar">
+                <div class="sideContent">
+                    <div class="nameplate" id="nameButton">
+                        <img src="kz_title.png" onclick="modalTime(this)"/>
+                    </div>
+                    <div class="titleplate">
+                        <img src="3D artist plate.png"/>
+                    </div>
+
+                    <div class="emptyBox" style="height: 60px;"></div>
+                    
+                    <div class="navButtons">
+                        <div class="emptyBox" style="display:flex; background: #ff1098; border-radius: 10px; width: 100%; height: 3px;"></div>
+                        <div class="navButton homeButton" onclick="sectionSkipTo('#homeTop')">Home</div>
+                        <div class="navButton aboutButton" id="aboutButtonClicker" onclick="modalTime(this)">About Me</div>
+                        <div class="emptyBox" style="display:flex; background: #ff1098; border-radius: 10px; width: 100%; height: 3px;"></div>
+                        
+                        <div class="navButton bigButton">3D Digital</div>
+                        <button class="navButton subButton" onclick="sectionSkipTo('#3dEnv')">Environment</button>
+                        <button class="navButton subButton">Character</button>
+                        <button class="navButton subButton">Animation</button>
+                        <div class="navButton otherButton">2D Digital</div>
+                        <div class="navButton otherButton">Miscellaneous</div>
+                    </div>
+                </div>
+                <div class="waveBorder"></div>
+            </div>
+
+
+            <div class="emptyBox" id="homeTop"></div>
+            <div class="content">
+                <div class="featuredContainer">
+                    <div class="featured">
+                        <div class="featMediaContainer">
+                            <!-- <img src="PSP_Shadow.png"> -->
+                            <iframe src="https://www.youtube.com/embed/e79Un6kbOX0?si=t1irAq1uXTUGcDLI" title="YouTube video player"
+                            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="featMediaText">
+                            <h1>a hanging start</h1>
+
+                            <p>This is my thesis film for Animation & Visualization at UCF.</p>
+                            <p>This story is the prologue to Moriana Rosethorne's life. What happened before she overcame her odds and
+                                became the queen through her own work. During this short, we discover her circumstances and the
+                                obstacles in her path to fulfilling the duty given to her as a child.
+                            </p>
+                            <p>I absolutely loved modeling everything for this project. I can't wait to make even more in the future,
+                                whether in film or games.
+                            </p>
+                            <p>Created using Autodesk Maya, Maxon ZBrush, and Substance 3D Painter. Edited in Adobe After Effects.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="arrowDown">
+                    <h4 style="color: #39c5bb;">vVvVvVv</h4>
+                </div>
+                <div class="emptyBox" style="height: 80px;"></div>
+
+                <!-- 3d section  -->
+                <div class="emptyBox" style="height: 30px;" id="3dEnv"></div>
+                <div class="sectionTitle">3D Digital</div>
+                <div class="sectionSpecific">Environments</div>
+                <div class="emptyBox" style="height: 30px;"></div>
+
+                <div class="galleryStuffContainer">
+                    
+                    <div class="galleryStuff">
+                        <div class="galleryContent">
+                            <div class="galleryMedia">
+                                <img src="donut.gif"/>
+                            </div>
+                            <div class="galleryText">
+                                <h2>babagaboosh</h2>
+                                <p>bababnananan fjidfjo awhkjjd ocnnw pretend theres some phenomenal description
+                                    thats right here and its perfect and it has zero grammar issues and itself
+                                    automatically translates itself into ur head into your preferred language
+                                    and its said in
+                                </p>
+                            </div>
+                        </div>
+                        <div class="galleryContent">
+                            <video
+                                class="modelVideo"
+                                src="StarShower_Turnaround_Rendered_Fixed.mp4"
+                                autoplay
+                                loop
+                                muted
+                                draggable="false"
+                            >
+                            </video>
+                            <div class="galleryText">
+                                <h2>SoundShower Arcade Cab</h2>
+                                <p>This was my first 3D model created using Autodesk Maya and Substance 3D Painter.
+                                    SoundShower is a fictional arcade rhythm game wtih gameplay elements inspired
+                                    by Project DIVA  and MÚSECA.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="galleryContent"></div>
+                        <div class="galleryContent">
+                            <div class="galleryMedia">
+                                <img src="PSP_Shadow.png"/>
+                            </div>
+                            <div class="galleryText">
+                                <h2>babagaboosh</h2>
+                                <p>bababnananan fjidfjo awhkjjd ocnnw pretend theres some phenomenal description
+                                    thats right here and its perfect and it has zero grammar issues and itself
+                                    automatically translates itself into ur head into your preferred language
+                                    and its said in your favorite person's voice and then at the end the voice
+                                    says it loves you and then you're not sure jesus i was gonna write more
+                                    but i wrote too much.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="galleryContent">
+                            <div class="galleryMedia">
+                                <img src="donut.gif"/>
+                            </div>
+                            <div class="galleryText">
+                                <h2>babagaboosh</h2>
+                                <p>bababnananan fjidfjo awhkjjd ocnnw pretend theres some phenomenal description
+                                    thats right here and its perfect and it has zero grammar issues and itself
+                                    automatically translates itself into ur head into your preferred language
+                                    and its said in your favorite person's voice and then at the end the voice
+                                    says it loves you and then you're not sure jesus i was gonna write more
+                                    but i wrote too much.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="galleryContent"></div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="waveBorder right"></div>
+
+        </div>
+
+        <!--Modal for about me-->
+        <div id="aboutModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="aboutContent">
+                <img src="name popdown.svg" class="popDown">
+                <div class="aboutDesc">
+                    <button class="closeAboutButton">close</button>
+                    </button>
+                    <h5>Kazandra</h5>
+                    <h5 style="margin-left: 80px; line-height: 63px;">Crisostomo</h5>
+                    <p style="margin-top: 40px;">
+                        Hello! I'm <span style="color:#ff1098; font-weight: 600;">Kazandra</span>!
+                        I am a 3D artist about to graduate from UCF
+                        with my BFA in Emerging Media in the Animation & Visualization
+                        track. I love thinking about how objects are made and structured!
+                    </p>
+                    <p>
+                        From sculpture and book binding to knitting and party decor, everything can be an
+                        opportunity to flex my creativity both digitally and physically.
+                    </p>
+                    <div class="emptyBox" style="height: 50px;"></div>
+                    <a class="contactButton" style="margin-left: -30px;" href="mailto:kzzzcrisis@gmail.com">Shoot me an email?</a>
+                </div>
+            </div>
+
+        </div>
+
+
+        <script>
+
+            // Get the modal
+            var modal = document.getElementById('aboutModal');
+
+            // Get the button that opens the modal
+            var btn = document.getElementById("nameButton");
+            var butt = document.getElementById("aboutButtonClicker");
+
+            // Get the <span> element that closes the modal
+            var closer = document.getElementsByClassName("closeAboutButton")[0];
+
+            // this is the thing to get the blur to work
+            var everything = document.getElementsByClassName("everything")[0];
+
+            // When the user clicks on the button, open the modal
+            btn.onclick = function() {
+                modal.classList.add('show');
+                modal.classList.add('stopScrolling');
+                document.body.classList.add('stopScrolling');
+                everything.classList.add('blurThis');
+            }
+            butt.onclick = function() {
+                modal.classList.add('show');
+                modal.classList.add('stopScrolling');
+                document.body.classList.add('stopScrolling');
+                everything.classList.add('blurThis');
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            closer.onclick = function() {
+                modal.classList.remove('show');
+                modal.classList.remove('stopScrolling');
+                document.body.classList.remove('stopScrolling');
+                everything.classList.remove('blurThis');
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                modal.classList.remove('show');
+                modal.classList.remove('stopScrolling');
+                document.body.classList.remove('stopScrolling');
+                everything.classList.remove('blurThis');
+                }
+            }
+
+
+
+            function sectionSkipTo(link){
+                document.documentElement.style.scrollBehavior="smooth"
+                window.location.replace(link)
+                setTimeout(()=>{document.documentElement.style.scrollBehavior="unset"},1500) 
+            }
+
+        </script>
+
+    </body>
+</html>
