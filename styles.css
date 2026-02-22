@@ -348,6 +348,43 @@ p {
     text-align: center;
     color: #9feee8;
 }
+.bottomThings {
+    display: flex;
+    width: 100%;
+}
+.tagLeft {
+    box-shadow: 3px 3px 0 -1px #ff1098;
+    padding: 20px 20px;
+    background: #3209B2;
+    color: #9feee8;
+    border: 4px solid #573DFF;
+    border-radius: 42px;
+    font-size: 1.11em;
+    font-weight: 200;
+    font-family: "Montserrat Alternates", sans-serif;
+    text-align: center;
+    padding: 4px 20px;
+    min-width: 175;
+    align-self: flex-start;
+}
+.learnMore {
+    box-shadow: 3px 3px 0 -1px #ff1098;
+    padding: 20px 20px;
+    background: #3209B2;
+    color: #9feee8;
+    border: 4px solid #573DFF;
+    border-radius: 42px;
+    font-size: 1.1em;
+    font-weight: 200;
+    font-family: "Montserrat Alternates", sans-serif;
+    text-align: center;
+    padding: 4px 20px;
+    margin-left: auto;
+
+    &:hover {
+        background: #573DFF;
+    }
+}
 
 
 
@@ -428,7 +465,7 @@ p {
 
 
 /* The Modal (background) */
-.modal {
+.modal4About {
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     left: 0;
@@ -440,7 +477,7 @@ p {
     justify-content: center;
     transition: top 0.5s;
 }
-.modal.show {
+.modal4About.show {
     top: 0;
     
 }
@@ -518,8 +555,6 @@ p {
         background: #573DFF;
     }
 }
-
-
 .stopScrolling {
     height: 100%;
     overflow: hidden;
@@ -530,3 +565,10 @@ p {
     backdrop-filter: blur(10px);
     transition: filter 0.7s ease;
 }
+
+
+
+
+
+
+/* modal for big pic */

@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+	display: flex;
+    background-color: #032e2b;
+    background-image: url(pxl_star.gif);
+    background-repeat: repeat;
+    background-size: 5%;
+    background-attachment: fixed;
+    padding: 0;
+    margin: 0;
+    color: #9feee8;
+    font-family: "Montserrat Alternates", sans-serif;
+}
+
+h1 {
+	font-family: "Josefin Slab";
+	font-size: 2.6em;
+    margin: 0;
+}
+h2 {
+	font-family: "Josefin Slab";
+	font-size: 2.1em;
+    margin: 0;
+}
+p {
+	font-size: 1.3em;
+	font-family: "Montserrat Alternates", sans-serif;
+}
+
+
+
+.everything{
+    display: flex;
+    width: 100%;
+}
+
+
+.waveBorder {
+    align-self: flex-start;
+    display: flex;
+    background-image: url("wavy bar.svg");
+    background-repeat: repeat-y;
+    height: 100vh;
+    min-width: 40px;
+
+    &.right {
+        position: sticky;
+        top: 0;
+        transform: rotate(180deg);
+    }
+}
+.emptyBox {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+
+
+
+.sidebar {
+    display: flex;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 30%;
+    align-self: flex-start;
+}
+
+.sideContent {
+    display: flex;
+    flex-direction: column;
+    background-color: #39c5bb;
+    text-wrap: wrap;
+    text-align: center;
+    padding: 0 30px;
+}
+
+.artTitle {
+    padding: 20px 20px;
+    background: #001715;
+    box-shadow: 3px 3px 0 -1px #ff1098;
+    padding: 20px 20px;
+    background: #3209B2;
+    color: #9feee8;
+    border: 4px solid #573DFF;
+    border-radius: 42px;
+    margin-top: 70px;
+}
+.artDesc {
+    padding: 20px 20px;
+    background: #001715;
+    box-shadow: 3px 3px 0 -1px #ff1098;
+    padding: 20px 20px;
+    background: #3209B2;
+    color: #9feee8;
+    border: 4px solid #573DFF;
+    border-radius: 42px;
+    margin-top: 60px;
+    width: 500px;
+    align-self: center;
+}
+
+.artTags {
+    position: absolute;
+    bottom: 160px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px 20px;
+    width: 500px;
+    align-self: center;
+}
+.tag {
+    box-shadow: 3px 3px 0 -1px #ff1098;
+    padding: 20px 20px;
+    background: #3209B2;
+    color: #9feee8;
+    border: 4px solid #573DFF;
+    border-radius: 10px 42px;
+    font-size: 1.1em;
+    font-weight: 200;
+    font-family: "Montserrat Alternates", sans-serif;
+    text-align: center;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.backHomeButton {
+    position: absolute;
+    box-shadow: 3px 3px 0 -1px #ff1098;
+    background: #3209B2;
+    color: #9feee8;
+    border: 4px solid #573DFF;
+    border-radius: 42px;
+    font-size: 1.3em;
+    font-weight: 100;
+    font-family: "Josefin Slab";
+    text-align: center;
+    padding: 9px 40px;
+    bottom: 50px;
+    left: 50px;
+    align-self: flex-end;
+    justify-self: flex-end;
+
+    &:hover {
+        background: #573DFF;
+    }
+}
+
+
+
+
+
+
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    overflow-x: hidden;
+}
+.rotateShow {
+    display: flex;
+    position: absolute;
+    right: 300px;
+    top: 30px;
+    transform: rotate(6deg);
+    z-index: 1;
+    width: 200px;
+    align-items: center;
+    justify-content: center;
+
+    & h2 {
+        position:absolute;
+        color: #ff1098;
+        margin-top: 4px;
+    }
+}
+
+.artBig {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.modelVideo {
+    background-color: hotpink;
+    max-width: 56%;
+    user-select: none;
+    padding: 20px 20px;
+    background: #001715;
+    color: #9feee8;
+    border: 4px solid #39c5bb;
+    border-radius: 42px;
+    margin-top: 70px;
+    cursor: move;
+}

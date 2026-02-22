@@ -120,7 +120,11 @@
                                     SoundShower is a fictional arcade rhythm game with gameplay elements inspired
                                     by Project DIVA  and MÚSECA.
                                 </p>
-                                9503 Polys
+                                <div class="bottomThings">
+                                    <div class="tagLeft">9503 Polys</div>
+                                    <button class="learnMore">Learn More</button>
+                                </div>
+                                
                             </div>
                         </div>
                         <div class="galleryContent">
@@ -493,19 +497,27 @@
                     </div>
                     
                 </div>
-
-
-
-                
+   
             </div>
 
+            <div class="zoomerModal">
+
+            </div>
+
+
+
+
+
             <div class="waveBorder right"></div>
+            
 
         </div>
 
-        <!--Modal for about me-->
-        <div id="aboutModal" class="modal">
 
+
+
+        <!--Modal for about me-->
+        <div id="aboutModal" class="modal4About">
             <!-- Modal content -->
             <div class="aboutContent">
                 <img src="name popdown.svg" class="popDown">
@@ -532,10 +544,14 @@
         </div>
 
 
+        <!-- modal for big pic -->
+
+
+
         <script>
 
             // Get the modal
-            var modal = document.getElementById('aboutModal');
+            var modal4About = document.getElementById('aboutModal');
 
             // Get the button that opens the modal
             var btn = document.getElementById("nameButton");
@@ -586,6 +602,12 @@
                 window.location.replace(link)
                 setTimeout(()=>{document.documentElement.style.scrollBehavior="unset"},1500) 
             }
+
+
+
+
+
+
 
         </script>
 

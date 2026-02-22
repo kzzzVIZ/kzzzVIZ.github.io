@@ -1,0 +1,142 @@
+<!-- KZ's Portfolio with help from Fudgeu (thx dude) -->                                                                                                                   
+<!DOCTYPE html>
+<html lang='en' class=''>
+    <head>
+
+        <meta charset='UTF-8'>
+        <meta name="description" content="KZ's artist portfolio">
+        <meta name="keywords" content="artist, portfolio, 3D">
+        <meta name="author" content="Kazandra Crisostomo">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="/artpages.css" rel="stylesheet" type="text/css" media="all">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&icon_names=mail,send"/>
+        <title>Kazandra's Portfolio</title>
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+        <!-- model scrubber -->
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+            const modelVideo = document.querySelector('.modelVideo');
+            if (modelVideo) {
+                let startX = 0
+                let lastMovement = 0
+                let inertiaTimeout = null
+
+                function scrubVideo(byAmount) {
+                if (!isNaN(byAmount)) {
+                    if (modelVideo.currentTime - byAmount <= 0) {
+                    modelVideo.currentTime = modelVideo.duration - byAmount;
+                    } else if (modelVideo.currentTime - byAmount > modelVideo.duration) {
+                    modelVideo.currentTime = byAmount;
+                    } else {
+                    modelVideo.currentTime = modelVideo.currentTime - byAmount;
+                    }
+                }
+                }
+
+                // function doInertia(inertia, inertiaDirection) {
+                // inertiaTimeout = setTimeout(() => {
+                //     if (inertia < 0.01) return
+                //     scrubVideo(inertia * inertiaDirection)
+                //     inertia *= 0.9;
+                //     doInertia(inertia, inertiaDirection);
+                // }, 10)
+                // }
+
+                function scrubHandler(e) {
+                const x = (e.clientX - startX) * 0.02;
+                startX = e.clientX;
+                scrubVideo(x)
+                lastMovement = x
+                }
+
+                modelVideo.addEventListener('mousedown', (e) => {
+                if (inertiaTimeout) clearTimeout(inertiaTimeout)
+                startX = e.clientX;
+                document.addEventListener('mousemove', scrubHandler);
+                // delete this if you want it to keep going after rotating
+                modelVideo.pause()
+                })
+
+                document.addEventListener('mouseup', () => {
+                document.removeEventListener('mousemove', scrubHandler);
+                let inertia = Math.abs(lastMovement * 2);
+                let inertiaDirection = lastMovement > 0 ? 1 : -1;
+                doInertia(inertia, inertiaDirection);
+                lastMovement = 0
+                })
+
+                document.addEventListener('mouseleave', () => {
+                document.removeEventListener('mousemove', scrubHandler);
+                })
+            }
+            });
+
+        </script>
+
+    </head>
+
+    <body>
+        <div class="everything">
+            <div class="sidebar">
+                <div class="sideContent">
+                    <div class="artTitle">
+                        <h1>SoundShower Arcade Cabinet</h1>
+                    </div>
+                    
+                    <div class="artDesc">
+                        <p>
+                            This is the first 3D model I created using Autodesk Maya and Substance 3D Painter.
+                            SoundShower is a fictional arcade rhythm game with gameplay elements inspired
+                            by Project DIVA  and MÚSECA.
+                        </p>
+                    </div>
+
+                    <div class="artTags">
+                        <div class="tag">9503 Polys</div>
+                        <div class="tag">Autodesk Maya</div>
+                        <div class="tag">Substance Painter</div>
+                    </div>
+
+                    <button class="backHomeButton"> Back Home?</button>
+
+
+                    
+                </div>
+
+                <div class="waveBorder"></div>
+            </div>
+
+
+
+            <div class="content">
+
+                <div class="rotateShow">
+                    <img src="/rotateable bubble.svg"/>
+                    <h2>Rotate Me!</h2>
+                </div>
+                
+                <div class="artBig">
+                    <video
+                    class="modelVideo"
+                    src="/art/3D Env/SoundShower Rendered.mp4"
+                    autoplay
+                    loop
+                    muted
+                    draggable="false"
+                    >
+                    </video>
+                </div>
+
+                <div class="artGallery">
+
+                </div>
+
+            </div>
+            <div class="waveBorder right"></div>
+        </div>
+
+
+    </body>
+</html>
