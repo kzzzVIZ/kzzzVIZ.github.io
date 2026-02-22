@@ -24,7 +24,7 @@
             <div class="sidebar">
                 <div class="sideContent">
                     <div class="nameplate" id="nameButton">
-                        <img src="kz_title.png" onclick="modalTime(this)"/>
+                        <img src="kz_title.png"/>
                     </div>
                     <div class="titleplate">
                         <img src="3D artist plate.png"/>
@@ -35,7 +35,7 @@
                     <div class="navButtons">
                         <div class="emptyBox" style="display:flex; background: #ff1098; border-radius: 10px; width: 100%; height: 3px;"></div>
                         <div class="navButton homeButton" onclick="sectionSkipTo('#homeTop')">Home</div>
-                        <div class="navButton aboutButton" id="aboutButtonClicker" onclick="modalTime(this)">About Me</div>
+                        <div class="navButton aboutButton" id="aboutButtonClicker">About Me</div>
                         <div class="emptyBox" style="display:flex; background: #ff1098; border-radius: 10px; width: 100%; height: 3px;"></div>
                         
                         <div class="navButton bigButton" onclick="sectionSkipTo('#3dEnv')">3D Digital</div>
@@ -122,7 +122,7 @@
                                 </p>
                                 <div class="bottomThings">
                                     <div class="tagLeft">9503 Polys</div>
-                                    <button class="learnMore">Learn More</button>
+                                    <a class="learnMore" href="/art/SoundShower">Learn More?</a>
                                 </div>
                                 
                             </div>
@@ -500,14 +500,6 @@
    
             </div>
 
-            <div class="zoomerModal">
-
-            </div>
-
-
-
-
-
             <div class="waveBorder right"></div>
             
 
@@ -544,14 +536,11 @@
         </div>
 
 
-        <!-- modal for big pic -->
-
-
 
         <script>
 
             // Get the modal
-            var modal4About = document.getElementById('aboutModal');
+            var modal = document.getElementById('aboutModal');
 
             // Get the button that opens the modal
             var btn = document.getElementById("nameButton");
