@@ -81,7 +81,6 @@ p {
 
 .sideContent img {
     width: 100%;
-    height: max-content;
 }
 
 .waveBorder {
@@ -472,18 +471,17 @@ p {
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     top: -100%;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     transition: top 0.5s;
 }
 .modal4About.show {
     top: 0;
-    
+    display: flex;
 }
 
 #aboutModal {
-    display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
