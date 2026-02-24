@@ -196,7 +196,7 @@
                             <div class="galleryContent">
                                 <video
                                     class="modelVideo"
-                                    src="StarShower_Turnaround_Rendered_Fixed.mp4"
+                                    src=""
                                     autoplay
                                     loop
                                     muted
@@ -532,13 +532,36 @@
                     <a class="contactButton" style="margin-left: -30px;" href="mailto:kzzzcrisis@gmail.com">Shoot me an email?</a>
                 </div>
             </div>
-
         </div>
 
+        
+        <!-- popup for small screen -->
+         <div id="mobileUsers">
+            <div class="mobilePopup">
+                <p>Hey! This website was unfortunately not optimized for a mobile viewing
+                experience. Please check me out on uh artstation I guess</p>
+                <div style="height:10px;"></div>
+                <a href="">Artstation link here</a>
+            </div>
+         </div>
 
-
+        <!-- this is the popup for if ppl do phone -->
         <script>
+            var mobileUserLol = document.getElementById('mobileUsers');
+            var everythinger = document.getElementsByClassName("everything")[0];
 
+            window.addEventListener('onload', () => {
+                if (window.screen.width < 900) {
+                    mobileUserLol.classList.add('show');
+                    mobileUserLol.classList.add('stopScrolling');
+                    document.body.classList.add('stopScrolling');
+                    everythinger.classList.add('blurThis');
+                }
+            })
+        </script>
+
+        <!-- this script is for the about me modal -->
+        <script>
             // Get the modal
             var modal = document.getElementById('aboutModal');
 
@@ -583,22 +606,18 @@
                 everything.classList.remove('blurThis');
                 }
             }
-
-
-
+        </script>
+        
+        <!-- this one is for skipping to whatever seciton using the sidebar buttons -->
+        <script>
             function sectionSkipTo(link){
                 document.documentElement.style.scrollBehavior="smooth"
                 window.location.replace(link)
                 setTimeout(()=>{document.documentElement.style.scrollBehavior="unset"},1500) 
             }
-
-
-
-
-
-
-
         </script>
+
+
 
     </body>
 </html>
