@@ -10,7 +10,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link href="styles.css" rel="stylesheet" type="text/css" media="all">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&icon_names=mail,send"/>
         <title>Kazandra's Portfolio</title>
         <link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -550,7 +549,7 @@
             var mobileUserLol = document.getElementById('mobileUsers');
             var everythinger = document.getElementsByClassName("everything")[0];
 
-            window.addEventListener('onload', () => {
+            window.addEventListener('load', () => {
                 if (window.screen.width < 900) {
                     mobileUserLol.classList.add('show');
                     mobileUserLol.classList.add('stopScrolling');
@@ -607,7 +606,7 @@
                 }
             }
         </script>
-        
+
         <!-- this one is for skipping to whatever seciton using the sidebar buttons -->
         <script>
             function sectionSkipTo(link){

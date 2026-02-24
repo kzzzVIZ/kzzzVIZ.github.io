@@ -577,6 +577,7 @@ p {
 }
 #mobileUsers.show {
     display: flex;
+    overflow: hidden;
 }
 .mobilePopup {
 	font-family: "Montserrat Alternates", sans-serif;
