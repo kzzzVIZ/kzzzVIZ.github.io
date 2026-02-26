@@ -347,6 +347,20 @@ p {
     text-align: center;
     color: #9feee8;
 }
+.galleryMedia video {
+    background: #3209B2;
+    border: 3px solid #573dff;
+    border-radius: 20px;
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+.galleryMedia iframe {
+    background: #3209B2;
+    border: 3px solid #573dff;
+    border-radius: 20px;
+    width: 100%;
+    aspect-ratio: 16/9;
+}
 .bottomThings {
     display: flex;
     width: 100%;
