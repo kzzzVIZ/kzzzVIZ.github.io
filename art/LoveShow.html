@@ -1,0 +1,246 @@
+<!-- KZ's Portfolio with help from Fudgeu (thx dude) -->                                                                                                                   
+<!DOCTYPE html>
+<html lang='en' class=''>
+    <head>
+
+        <meta charset='UTF-8'>
+        <meta name="description" content="KZ's artist portfolio">
+        <meta name="keywords" content="artist, portfolio, 3D">
+        <meta name="author" content="Kazandra Crisostomo">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="/3Dpages.css" rel="stylesheet" type="text/css" media="all">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&icon_names=mail,send"/>
+        <title>Kazandra's Portfolio</title>
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+        <!-- model scrubber -->
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+            const modelVideo = document.getElementById('modelVideo');
+            if (modelVideo) {
+                let startX = 0
+                let lastMovement = 0
+                let inertiaTimeout = null
+
+                function scrubVideo(byAmount) {
+                if (!isNaN(byAmount)) {
+                    if (modelVideo.currentTime - byAmount <= 0) {
+                    modelVideo.currentTime = modelVideo.duration - byAmount;
+                    } else if (modelVideo.currentTime - byAmount > modelVideo.duration) {
+                    modelVideo.currentTime = byAmount;
+                    } else {
+                    modelVideo.currentTime = modelVideo.currentTime - byAmount;
+                    }
+                }
+                }
+
+                // function doInertia(inertia, inertiaDirection) {
+                // inertiaTimeout = setTimeout(() => {
+                //     if (inertia < 0.01) return
+                //     scrubVideo(inertia * inertiaDirection)
+                //     inertia *= 0.9;
+                //     doInertia(inertia, inertiaDirection);
+                // }, 10)
+                // }
+
+                function scrubHandler(e) {
+                const x = (e.clientX - startX) * 0.02;
+                startX = e.clientX;
+                scrubVideo(x)
+                lastMovement = x
+                }
+
+                modelVideo.addEventListener('mousedown', (e) => {
+                if (inertiaTimeout) clearTimeout(inertiaTimeout)
+                startX = e.clientX;
+                document.addEventListener('mousemove', scrubHandler);
+                // delete this if you want it to keep going after rotating
+                modelVideo.pause()
+                })
+
+                document.addEventListener('mouseup', () => {
+                document.removeEventListener('mousemove', scrubHandler);
+                let inertia = Math.abs(lastMovement * 2);
+                let inertiaDirection = lastMovement > 0 ? 1 : -1;
+                doInertia(inertia, inertiaDirection);
+                lastMovement = 0
+                })
+
+                document.addEventListener('mouseleave', () => {
+                document.removeEventListener('mousemove', scrubHandler);
+                })
+            }
+            });
+
+        </script>
+
+    </head>
+
+    <body>
+        <div class="everything">
+            <div class="sidebar">
+                <div class="sideContent">
+                    <div class="artTitle">
+                        <h1>Love Show Arcade Cabinet</h1>
+                    </div>
+                    
+                    <div class="artDesc">
+                        <p>
+                            <b>Protect Our Planet!</b> Our shield can't keep up its regeneration, so use the buttons
+                            to catch the stars! <b>Punch The Meteors!</b> Swipe on the arrow pads to punch away the
+                            meteors! Please don't punch the screen! We can't get that fixed!
+                        </p>
+                        <p>
+                            <b>Love Show</b> is a fictional arcade game inspired by water gun carnival games. Rather
+                            than using water, the love gun is an IR emitter used to shoot aliens on screen.
+                        </p>
+                        <p>
+                            This cabinet was created for a 3D modeling class (the same one as SoundShower!). I created
+                            <b>Love Show</b> to add another cabinet to an arcade environment.
+                        </p>
+                        <p>
+                            For this model, I wanted to try working in a low-poly style. In retrospect, I can
+                            see some parts that can be more optimized, but I'm still proud of the work that I've
+                            done for this very first model.
+                        </p>
+                    </div>
+
+                    <div style="flex:1"></div>
+
+                    <div class="artTags">
+                        <div class="tag">9503 Polys</div>
+                        <div class="tag">Autodesk Maya</div>
+                        <div class="tag">Substance Painter</div>
+                    </div>
+
+                    <a class="backHomeButton" href="/index.html">Back Home?</a>
+
+
+                    
+                </div>
+
+                <div class="waveBorder"></div>
+            </div>
+
+
+
+            <div class="content">
+
+                <div class="rotateShow">
+                    <img src="/rotateable bubble.svg"/>
+                    <h2>Rotate Me!</h2>
+                </div>
+
+
+                
+                <div class="artBig">
+                    <video
+                    id="modelVideo"
+                    src="/art/3D Env/SoundShower Rendered.mp4"
+                    autoplay
+                    loop
+                    muted
+                    draggable="false"
+                    >
+                    </video>
+                </div>
+
+
+
+            </div>
+            <div class="waveBorder right"></div>
+        </div>
+
+
+
+        <script>
+
+
+
+            const videoPlayer = document.getElementById('modelVideo');
+
+            function changeVideoSource(src) {
+                // Update the video source and poster
+                videoPlayer.src = src;
+                
+                // Load the new source and play
+                videoPlayer.load();
+                videoPlayer.play().catch(error => {
+                    console.error("Auto-play failed:", error);
+                    // Browsers often block auto-play without user interaction; handle gracefully
+                });
+            }
+
+            // video playlist (REPLACE THESE PER MODEL THAT NEEDS THE VIDEO)
+            const playlist = [
+                {
+                    title: "Rendered",
+                    src: "art/3D Env/Love Show Rendered.mp4",
+                },
+            ];
+
+            const playlistElement = document.getElementById('playlist');
+
+            function renderPlaylist() {
+                playlistElement.innerHTML = ''; // Clear existing items
+                
+                playlist.forEach((video, index) => {
+                    const li = document.createElement('li');
+                    li.textContent = video.title;
+                    li.dataset.index = index; // Store index for later use
+                
+                    // Add click event to load video
+                    li.addEventListener('click', () => {
+                    loadVideoByIndex(index);
+                    });
+                
+                    playlistElement.appendChild(li);
+                });
+            }
+            
+            // Initialize playlist on page load
+            renderPlaylist();
+
+            let currentVideoIndex = 0; // Track the current video
+ 
+            function loadVideoByIndex(index) {
+                if (index < 0 || index >= playlist.length) return; // Validate index
+                
+                const video = playlist[index];
+                changeVideoSource(video.src, video.poster);
+                
+                // Update current index
+                currentVideoIndex = index;
+                
+                // Highlight active playlist item
+                highlightActivePlaylistItem();
+                }
+                
+            function highlightActivePlaylistItem() {
+                // Remove 'active' class from all items
+                document.querySelectorAll('#playlist li').forEach(li => {
+                    li.classList.remove('active');
+                });
+                
+                // Add 'active' class to current item
+                document.querySelector(`#playlist li[data-index="${currentVideoIndex}"]`).classList.add('active');
+            }
+
+            // Load the first video in the playlist on init
+            document.addEventListener('DOMContentLoaded', () => {
+                renderPlaylist();
+                loadVideoByIndex(0);
+            });
+
+            videoPlayer.addEventListener('error', (e) => {
+                console.error("Video error:", e);
+                alert(`Failed to load video: ${playlist[currentVideoIndex].title}. Check the source.`);
+            });
+
+
+        </script>
+
+
+    </body>
+</html>
