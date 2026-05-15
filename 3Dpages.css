@@ -28,6 +28,11 @@ h2 {
 	font-size: 1.7em;
     margin: 0;
 }
+h3 {
+	font-family: "Josefin Slab";
+	font-size: 1.2em;
+    margin: 0;
+}
 p {
 	font-size: 1.1em;
 	font-family: "Montserrat Alternates", sans-serif;
@@ -184,6 +189,59 @@ p {
     }
 }
 
+.carouselButtons {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    height: 100%;
+    right: 100px;
+}
+
+.carouselImg {
+    height: 128px;
+    width: 128px;
+
+    & img {
+        padding: 5px;
+        background: #001715;
+        color: #9feee8;
+        border: 4px solid #39c5bb;
+        border-radius: 20px;
+    }
+    
+    &:hover .carouselCaption{
+        opacity: 1;
+    }
+
+    &:hover img {
+        border: 4px solid #001715;
+        transition: .2s ease;
+    }
+}
+
+.carouselCaption {
+    position: relative;
+    display: flex;
+    width: 146px;
+    height: 146px;
+    bottom: 149px;
+    z-index: 1;
+    color: #9feee8;
+    border: 4px solid #ff1098;
+    border-radius: 20px;
+	font-size: 1.2em;
+	font-family: "Montserrat Alternates", sans-serif;
+    color: #9feee8;
+    background: linear-gradient(to top, rgb(0,23,21,1),rgb(0,23,21,0));
+    justify-content: center;
+    align-items: end;
+    padding-bottom: 17px;
+    transition: .2s ease;
+    opacity: 0;
+}
+
 
 
 .artBig {
@@ -206,6 +264,11 @@ p {
     &.normalCursor{
         cursor: default;
     }
+}
+.artOther {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 #thingGif {
     background-color: hotpink;

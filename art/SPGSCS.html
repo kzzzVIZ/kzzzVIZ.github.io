@@ -137,24 +137,42 @@
                     <h2>Rotate Me!</h2>
                 </div> -->
 
-                <div class="videoChanger">
-                    <h2 style="color: #ff1098;">Change View?</h2>
-                    <div class="emptyBox" style="height: 14px;"></div>
-                    <ul id="playlist" style="padding:0; margin:6px;"></ul>
+                <div class="carouselButtons">
+                    <div class="carouselImg">
+                        <img src="/art/3D Anim/SPGSCS Video THUMB.jpg"/>
+                        <div class="carouselCaption">Animation</div>
+                    </div>
+                    <div class="carouselImg">
+                        <img src="/art/3D Anim/SPGSCS Concept Art THUMB.jpg"/>
+                        <div class="carouselCaption">Concept</div>
+                    </div>
                 </div>
 
-                
-                <div class="artBig">
-                    <video
-                    id="modelVideo"
-                    class="normalCursor"
-                    src="art/3D Anim/SPGSCS Rendered.mp4"
-                    autoplay
-                    loop
-                    muted
-                    draggable="false"
-                    >
-                    </video>
+                <div id="mainArt">
+                    <div class="videoChanger">
+                        <h2 style="color: #9feee8;">Change View?</h2>
+                        <div class="emptyBox" style="height: 14px;"></div>
+                        <ul id="playlist" style="padding:0; margin:6px;"></ul>
+                    </div>
+
+                    <div class="artBig">
+                        <video
+                        id="modelVideo"
+                        class="normalCursor"
+                        src="/art/3D Anim/SPGSCS Rendered.mp4"
+                        autoplay
+                        loop
+                        muted
+                        draggable="false"
+                        >
+                        </video>
+                    </div>
+                </div>
+
+                <div id="carouselArt01">
+                    <div class="artOther" style="opacity: .5;">
+                        <img src="/art/3D Anim/SPGSCS Concept Art.jpg"/>
+                    </div>
                 </div>
 
 
@@ -166,6 +184,13 @@
 
 
         <script>
+
+            // This one for the switching with the thumbnails one the side
+            const main01 = document.getElementById('mainArt01');
+            const carousel01 = document.getElementById('carouselArt01');
+            function switchCarousel() {
+                
+            }
 
 
 
