@@ -1,0 +1,262 @@
+<!-- KZ's Portfolio with help from Fudgeu (thx dude) -->                                                                                                                   
+<!DOCTYPE html>
+<html lang='en' class=''>
+    <head>
+
+        <meta charset='UTF-8'>
+        <meta name="description" content="KZ's artist portfolio">
+        <meta name="keywords" content="artist, portfolio, 3D">
+        <meta name="author" content="Kazandra Crisostomo">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="/3Dpages.css" rel="stylesheet" type="text/css" media="all">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&icon_names=mail,send"/>
+        <title>Kazandra's Portfolio</title>
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+        <!-- model scrubber -->
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+            const modelVideo = document.getElementById('modelVideo');
+            if (modelVideo) {
+                let startX = 0
+                let lastMovement = 0
+                let inertiaTimeout = null
+
+                function scrubVideo(byAmount) {
+                if (!isNaN(byAmount)) {
+                    if (modelVideo.currentTime - byAmount <= 0) {
+                    modelVideo.currentTime = modelVideo.duration - byAmount;
+                    } else if (modelVideo.currentTime - byAmount > modelVideo.duration) {
+                    modelVideo.currentTime = byAmount;
+                    } else {
+                    modelVideo.currentTime = modelVideo.currentTime - byAmount;
+                    }
+                }
+                }
+
+                // function doInertia(inertia, inertiaDirection) {
+                // inertiaTimeout = setTimeout(() => {
+                //     if (inertia < 0.01) return
+                //     scrubVideo(inertia * inertiaDirection)
+                //     inertia *= 0.9;
+                //     doInertia(inertia, inertiaDirection);
+                // }, 10)
+                // }
+
+                function scrubHandler(e) {
+                const x = (e.clientX - startX) * 0.02;
+                startX = e.clientX;
+                scrubVideo(x)
+                lastMovement = x
+                }
+
+                modelVideo.addEventListener('mousedown', (e) => {
+                if (inertiaTimeout) clearTimeout(inertiaTimeout)
+                startX = e.clientX;
+                document.addEventListener('mousemove', scrubHandler);
+                // delete this if you want it to keep going after rotating
+                modelVideo.pause()
+                })
+
+                document.addEventListener('mouseup', () => {
+                document.removeEventListener('mousemove', scrubHandler);
+                let inertia = Math.abs(lastMovement * 2);
+                let inertiaDirection = lastMovement > 0 ? 1 : -1;
+                doInertia(inertia, inertiaDirection);
+                lastMovement = 0
+                })
+
+                document.addEventListener('mouseleave', () => {
+                document.removeEventListener('mousemove', scrubHandler);
+                })
+            }
+            });
+
+        </script>
+
+    </head>
+
+    <body>
+        <div class="everything">
+            <div class="sidebar">
+                <div class="sideContent">
+                    <div class="artTitle">
+                        <h1>Lava Lamp</h1>
+                    </div>
+
+                    <div class="artTags">
+                        <div class="tag">108,988 Polys</div>
+                        <div class="tag">Blender</div>
+                        <div class="tag">Metaballs</div>
+                    </div>
+                    
+                    <div class="artDesc">
+                        <p>
+                            The first thing I wanted to make in <b>Blender</b> after graduating was something with my blobby fire character.
+                            Looking through the list of primitives to add, I saw the <b>metaball</b> and immediately thought it would be the
+                            perfect thing to animate into a <b>lava lamp</b>. After doing some research and concepting several lava lamp designs,
+                            I settled for a classic <b>rocket ship</b>.
+                        </p>
+                        <p>
+                            Modeling the rocket and animating the metaballs was fairly simple, but my biggest issue came from making
+                            the <b>toon shader</b>. For this model, I used an emission shader for the toon style and some color ramps for the
+                            outlines. I was originally going to use a <b>reverse hull method</b> for the outline, but it didn't work as expected
+                            for the glass. I switched to a <b>shader-based method</b> for the outline instead.
+                        </p>
+                        <p>
+                            Due to this animation's heavy usage of metaballs, I can only export it with its animations as an <b>alembic</b> file.
+                            Blender's metaball system allows metaballs to be converted into a mesh, but it doesn't allow <b>multiple frames</b>
+                            of animation to be converted. I understood why after some research, so I pivoted to exporting as an alembic
+                            so I can eventually import this model into <b>Unity</b>, even without the shaders it currently uses.
+                        </p>
+                        
+                    </div>
+
+                    <div style="flex:1"></div>
+
+                    
+
+                    <a class="backHomeButton" href="/index.html">Back Home?</a>
+
+
+                    
+                </div>
+
+                <div class="waveBorder"></div>
+            </div>
+
+
+
+            <div class="content">
+
+                <div class="rotateShow">
+                    <img src="/rotateable bubble.svg"/>
+                    <h2>Rotate Me!</h2>
+                </div>
+
+                <div class="videoChanger">
+                    <h2 style="color: #ff1098;">Change View?</h2>
+                    <div class="emptyBox" style="height: 14px;"></div>
+                    <ul id="playlist" style="padding:0; margin:6px;"></ul>
+                </div>
+
+                
+                <div class="artBig">
+                    <video
+                    id="modelVideo"
+                    src="/art/3D Env/Lava Lamp Rendered.mp4"
+                    autoplay
+                    loop
+                    muted
+                    draggable="false"
+                    >
+                    </video>
+                </div>
+
+
+
+            </div>
+            <div class="waveBorder right"></div>
+        </div>
+
+
+
+        <script>
+
+
+
+            const videoPlayer = document.getElementById('modelVideo');
+
+            function changeVideoSource(src) {
+                // Update the video source and poster
+                videoPlayer.src = src;
+                
+                // Load the new source and play
+                videoPlayer.load();
+                videoPlayer.play().catch(error => {
+                    console.error("Auto-play failed:", error);
+                    // Browsers often block auto-play without user interaction; handle gracefully
+                });
+            }
+
+            // video playlist (REPLACE THESE PER MODEL THAT NEEDS THE VIDEO)
+            const playlist = [
+                {
+                    title: "Rendered",
+                    src: "/art/3D Env/Lava Lamp Rendered.mp4",
+                },
+                {
+                    title: "Wireframe",
+                    src: "/art/3D Env/Lava Lamp Wireframe.mp4",
+                },
+                {
+                    title: "Solid",
+                    src: "/art/3D Env/Lava Lamp Solid.mp4",
+                }
+            ];
+
+            const playlistElement = document.getElementById('playlist');
+
+            function renderPlaylist() {
+                playlistElement.innerHTML = ''; // Clear existing items
+                
+                playlist.forEach((video, index) => {
+                    const li = document.createElement('li');
+                    li.textContent = video.title;
+                    li.dataset.index = index; // Store index for later use
+                
+                    // Add click event to load video
+                    li.addEventListener('click', () => {
+                    loadVideoByIndex(index);
+                    });
+                
+                    playlistElement.appendChild(li);
+                });
+            }
+            
+            // Initialize playlist on page load
+            renderPlaylist();
+
+            let currentVideoIndex = 0; // Track the current video
+ 
+            function loadVideoByIndex(index) {
+                if (index < 0 || index >= playlist.length) return; // Validate index
+                
+                const video = playlist[index];
+                changeVideoSource(video.src, video.poster);
+                
+                // Update current index
+                currentVideoIndex = index;
+                
+                // Highlight active playlist item
+                highlightActivePlaylistItem();
+                }
+                
+            function highlightActivePlaylistItem() {
+                // Remove 'active' class from all items
+                document.querySelectorAll('#playlist li').forEach(li => {
+                    li.classList.remove('active');
+                });
+                
+                // Add 'active' class to current item
+                document.querySelector(`#playlist li[data-index="${currentVideoIndex}"]`).classList.add('active');
+            }
+
+            // Load the first video in the playlist on init
+            document.addEventListener('DOMContentLoaded', () => {
+                renderPlaylist();
+                loadVideoByIndex(0);
+            });
+
+            videoPlayer.addEventListener('error', (e) => {
+                console.error("Video error:", e);
+                alert(`Failed to load video: ${playlist[currentVideoIndex].title}. Check the source.`);
+            });
+
+
+        </script>
+
+
+    </body>
+</html>
