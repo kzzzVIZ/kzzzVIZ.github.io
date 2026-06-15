@@ -342,6 +342,8 @@ p {
 }
 .galleryMedia img {
     max-width: 100%;
+    border: 3px solid #573dff;
+    border-radius: 20px;
 }
 .galleryText {
     width: 100%;
