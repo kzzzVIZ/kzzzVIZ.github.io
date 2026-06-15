@@ -107,7 +107,6 @@ p {
 .navButton {
     font-family: "Josefin Slab";
     box-shadow: 3px 3px 0 -1px #ff1098;
-    padding: 20px 20px;
     background: #3209B2;
     color: #9feee8;
     border: 4px solid #573DFF;
@@ -159,7 +158,7 @@ p {
 
     &.otherButton {
         border-radius: 42px;
-        font-size: 1.6em;
+        font-size: 1.3em;
         text-align: left;
         padding: 10px 20px;
         width: 80%;
@@ -261,7 +260,6 @@ p {
 .sectionTitle {
     font-family: "Josefin Slab";
     box-shadow: 3px 3px 0 -1px #ff1098;
-    padding: 20px 20px;
     background: #3209B2;
     color: #9feee8;
     border: 4px solid #573DFF;
@@ -278,7 +276,6 @@ p {
 .sectionSpecific {
     font-family: "Josefin Slab";
     box-shadow: 3px 3px 0 -1px #ff1098;
-    padding: 20px 20px;
     background: #3209B2;
     color: #9feee8;
     border: 4px solid #573DFF;
@@ -295,7 +292,6 @@ p {
 .sectionOther {
     font-family: "Josefin Slab";
     box-shadow: 3px 3px 0 -1px #ff1098;
-    padding: 20px 20px;
     background: #3209B2;
     color: #9feee8;
     border: 4px solid #573DFF;
@@ -343,7 +339,7 @@ p {
 .galleryMedia img {
     max-width: 100%;
     border: 3px solid #573dff;
-    border-radius: 20px;
+        border-radius: 20px;
 }
 .galleryText {
     width: 100%;
